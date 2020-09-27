@@ -106,6 +106,7 @@
                         <outlet property="Color3" destination="GP8-dC-R4x" id="TP3-Ms-tRr"/>
                         <outlet property="Color4" destination="OSe-Zr-xRb" id="jDQ-Rc-fjY"/>
                         <outlet property="colorName" destination="lBX-XB-CT4" id="Vgp-e0-U2Q"/>
+                        <outlet property="scoreLabel" destination="SE7-2F-ElZ" id="pga-Mt-Vc4"/>
                         <outlet property="scoreValue" destination="ahH-zT-ix8" id="E0D-mn-6q3"/>
                     </connections>
                 </viewController>

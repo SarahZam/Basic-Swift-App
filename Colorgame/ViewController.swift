@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var scoreValue: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var model = ColorGame()
     var score = 0
@@ -49,10 +50,7 @@ class ViewController: UIViewController {
         
         
         //color changes
-        Color1.backgroundColor = model.randomColorGenerator()
-        Color2.backgroundColor = model.randomColorGenerator()
-        Color3.backgroundColor = model.randomColorGenerator()
-        Color4.backgroundColor = model.randomColorGenerator()
+        colorChange()
         
         //diaplay color name
         
@@ -70,7 +68,8 @@ class ViewController: UIViewController {
         checkColor3 = model.check(inputString: colorName.text!, inputColor: Color3.backgroundColor!)
         checkColor4 = model.check(inputString: colorName.text!, inputColor: Color4.backgroundColor!)
         
-        
+        //Localization
+               scoreLabel.text = NSLocalizedString("Score", comment: "score")
         
     }
     
@@ -98,14 +97,13 @@ class ViewController: UIViewController {
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
         
-        //color changes
-              Color1.backgroundColor = model.randomColorGenerator()
-              Color2.backgroundColor = model.randomColorGenerator()
-              Color3.backgroundColor = model.randomColorGenerator()
-              Color4.backgroundColor = model.randomColorGenerator()
+        colorChange()
+         
     }
     
     @objc func handleTap1() {
+        
+  
         
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
@@ -113,9 +111,7 @@ class ViewController: UIViewController {
         checkColor3 = model.check(inputString: colorName.text!, inputColor: Color3.backgroundColor!)
         checkColor4 = model.check(inputString: colorName.text!, inputColor: Color4.backgroundColor!)
         
-        
-      
-        
+    
         if(checkColor1){
             score = model.increaseScore(inputInt: score)
         }
@@ -131,15 +127,12 @@ class ViewController: UIViewController {
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
         
-        //color changes
-              Color1.backgroundColor = model.randomColorGenerator()
-              Color2.backgroundColor = model.randomColorGenerator()
-              Color3.backgroundColor = model.randomColorGenerator()
-              Color4.backgroundColor = model.randomColorGenerator()
+       colorChange()
     }
     
     @objc func handleTap2() {
           
+        
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
         checkColor2 = model.check(inputString: colorName.text!, inputColor: Color2.backgroundColor!)
@@ -163,17 +156,12 @@ class ViewController: UIViewController {
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
         
-
-        //color changes
-        Color1.backgroundColor = model.randomColorGenerator()
-        Color2.backgroundColor = model.randomColorGenerator()
-        Color3.backgroundColor = model.randomColorGenerator()
-        Color4.backgroundColor = model.randomColorGenerator()
-          
+        colorChange()
       }
     
     @objc func handleTap3() {
-           
+        
+     
          //check color
          checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
          checkColor2 = model.check(inputString: colorName.text!, inputColor: Color2.backgroundColor!)
@@ -196,15 +184,13 @@ class ViewController: UIViewController {
         
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
-        //color changes
-                Color1.backgroundColor = model.randomColorGenerator()
-                Color2.backgroundColor = model.randomColorGenerator()
-                Color3.backgroundColor = model.randomColorGenerator()
-                Color4.backgroundColor = model.randomColorGenerator()
-       }
+        
+        colorChange()
+        
+    }
        
        @objc func handleTap4() {
-             
+    
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
         checkColor2 = model.check(inputString: colorName.text!, inputColor: Color2.backgroundColor!)
@@ -225,13 +211,41 @@ class ViewController: UIViewController {
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
 
+            colorChange()
+        
+         }
+    
+    func colorChange() {
+        
         //color changes
         Color1.backgroundColor = model.randomColorGenerator()
         Color2.backgroundColor = model.randomColorGenerator()
         Color3.backgroundColor = model.randomColorGenerator()
         Color4.backgroundColor = model.randomColorGenerator()
         
-         }
+        
+        
+        if Color4.backgroundColor == Color2.backgroundColor || Color4.backgroundColor == Color1.backgroundColor || Color4.backgroundColor == Color3.backgroundColor {
+            Color4.backgroundColor = model.randomColorGenerator()
+        }
+        
+    if Color3.backgroundColor == Color2.backgroundColor || Color3.backgroundColor == Color1.backgroundColor || Color3.backgroundColor == Color4.backgroundColor {
+            Color3.backgroundColor = model.randomColorGenerator()
+        }
+        
+        if Color2.backgroundColor == Color1.backgroundColor || Color2.backgroundColor == Color3.backgroundColor || Color2.backgroundColor == Color4.backgroundColor {
+            Color2.backgroundColor = model.randomColorGenerator()
+        }
+        
+        if Color1.backgroundColor == Color2.backgroundColor || Color1.backgroundColor == Color3.backgroundColor || Color1.backgroundColor == Color4.backgroundColor {
+                         Color1.backgroundColor = model.randomColorGenerator()
+                     }
+        
+        view.backgroundColor = model.backgroundColor()
+        if view.backgroundColor == UIColor.black || view.backgroundColor == UIColor.blue {
+        view.backgroundColor = UIColor.yellow
+        }
+    }
 
 
 }

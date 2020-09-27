@@ -25,7 +25,7 @@ class ColorGame{
     ]
     
     let colorStrings = [
-        "Red", "Yellow", "Orange", "Blue", "Pink", "Purple", "Green"
+        "Red", "Yellow", "Orange", "Teal", "Pink", "Purple", "Green"
     ]
     
     func randomColorGenerator() -> UIColor{
@@ -45,6 +45,14 @@ class ColorGame{
         return colorStringName
     }
     
+    func backgroundhelper() -> CGFloat {
+        return CGFloat(Float(arc4random())/Float(UINT32_MAX))
+    }
+    
+    func backgroundColor() -> UIColor {
+        return UIColor(red: backgroundhelper(), green: backgroundhelper(), blue: backgroundhelper(), alpha: backgroundhelper())
+    }
+    
     func increaseScore(inputInt: Int) -> Int{
         let score = inputInt + 1
         return score
@@ -61,12 +69,6 @@ class ColorGame{
             return true
         }
         else if inputColor == UIColor.systemPink && inputString == "Pink"{
-            return true
-        }
-        else if inputColor == UIColor.systemTeal && inputString == "Teal"{
-            return true
-        }
-        else if inputColor == UIColor.cyan && inputString == "Cyan"{
             return true
         }
         else if inputColor == UIColor.orange && inputString == "Orange"{
