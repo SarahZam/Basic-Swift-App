@@ -29,15 +29,18 @@ class ViewController: UIViewController {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2))
         Color2.addGestureRecognizer(tapGesture2)
         
-        //right1
+        //right2
         let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(handleTap3))
               Color3.addGestureRecognizer(tapGesture3)
-               
-        //left1
+            
+        //left2
         let tapGesture4 = UITapGestureRecognizer(target: self, action:
             #selector(handleTap4))
             Color4.addGestureRecognizer(tapGesture4)
        
+        
+        //Localization
+        colorName.text = NSLocalizedString("colorString", comment: "colorName")
     
     }
     

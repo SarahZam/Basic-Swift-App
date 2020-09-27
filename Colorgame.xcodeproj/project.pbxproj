@@ -14,6 +14,7 @@
 		2D4B9FD4251FFED9009D0322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B9FD3251FFED9009D0322 /* Assets.xcassets */; };
 		2D4B9FD7251FFED9009D0322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B9FD5251FFED9009D0322 /* LaunchScreen.storyboard */; };
 		2D65322A2520113900F05B8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D65322C2520113900F05B8A /* Localizable.strings */; };
+		2D65322F2520244200F05B8A /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65322E2520244200F05B8A /* ColorGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2D65322725200E9F00F05B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D65322B2520113900F05B8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2D65322D2520114700F05B8A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2D65322E2520244200F05B8A /* ColorGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		2D4B9FC9251FFED7009D0322 /* Colorgame */ = {
 			isa = PBXGroup;
 			children = (
+				2D65322E2520244200F05B8A /* ColorGame.swift */,
 				2D4B9FCA251FFED7009D0322 /* AppDelegate.swift */,
 				2D4B9FCC251FFED7009D0322 /* SceneDelegate.swift */,
 				2D4B9FCE251FFED7009D0322 /* ViewController.swift */,
@@ -147,6 +150,7 @@
 				2D4B9FCF251FFED7009D0322 /* ViewController.swift in Sources */,
 				2D4B9FCB251FFED7009D0322 /* AppDelegate.swift in Sources */,
 				2D4B9FCD251FFED7009D0322 /* SceneDelegate.swift in Sources */,
+				2D65322F2520244200F05B8A /* ColorGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
