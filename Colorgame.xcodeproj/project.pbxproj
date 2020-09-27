@@ -61,7 +61,7 @@
 		2D4B9FC9251FFED7009D0322 /* Colorgame */ = {
 			isa = PBXGroup;
 			children = (
-				2D65322E2520244200F05B8A /* ColorGame.swift */,
+				2D65323025202FA600F05B8A /* model */,
 				2D4B9FCA251FFED7009D0322 /* AppDelegate.swift */,
 				2D4B9FCC251FFED7009D0322 /* SceneDelegate.swift */,
 				2D4B9FCE251FFED7009D0322 /* ViewController.swift */,
@@ -72,6 +72,14 @@
 				2D65322C2520113900F05B8A /* Localizable.strings */,
 			);
 			path = Colorgame;
+			sourceTree = "<group>";
+		};
+		2D65323025202FA600F05B8A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2D65322E2520244200F05B8A /* ColorGame.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
