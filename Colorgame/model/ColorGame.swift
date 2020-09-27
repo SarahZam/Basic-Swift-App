@@ -25,7 +25,7 @@ class ColorGame{
     ]
     
     let colorStrings = [
-        "Red", "Yellow", "Orange", "Teal", "Pink", "Purple", "Green"
+        "Red", "Yellow", "Orange", "Black", "Pink", "Purple", "Green"
     ]
     
     func randomColorGenerator() -> UIColor{
@@ -50,7 +50,13 @@ class ColorGame{
     }
     
     func backgroundColor() -> UIColor {
-        return UIColor(red: backgroundhelper(), green: backgroundhelper(), blue: backgroundhelper(), alpha: backgroundhelper())
+        var color = UIColor(red: backgroundhelper(), green: backgroundhelper(), blue: backgroundhelper(), alpha: backgroundhelper())
+        
+        if color == UIColor.black || color == UIColor.darkGray {
+            color = UIColor.yellow
+        }
+        
+        return color
     }
     
     func increaseScore(inputInt: Int) -> Int{
