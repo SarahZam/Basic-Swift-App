@@ -103,7 +103,8 @@ class ViewController: UIViewController {
     
     @objc func handleTap1() {
         
-  
+  colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
+
         
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
@@ -112,11 +113,11 @@ class ViewController: UIViewController {
         checkColor4 = model.check(inputString: colorName.text!, inputColor: Color4.backgroundColor!)
         
     
-        if(checkColor1){
-            score = model.increaseScore(inputInt: score)
+        if(!checkColor1){
+            score = model.decreaseScore(inputInt: score)
         }
         else{
-            score = model.decreaseScore(inputInt: score)
+            score = model.increaseScore(inputInt: score)
         }
         scoreValue.text = String(score)
         
@@ -132,7 +133,8 @@ class ViewController: UIViewController {
     
     @objc func handleTap2() {
           
-        
+        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
+
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
         checkColor2 = model.check(inputString: colorName.text!, inputColor: Color2.backgroundColor!)
@@ -141,11 +143,11 @@ class ViewController: UIViewController {
         
          
           
-        if(checkColor2){
-                   score = model.increaseScore(inputInt: score)
+        if(!checkColor2){
+                   score = model.decreaseScore(inputInt: score)
                }
                else{
-                   score = model.decreaseScore(inputInt: score)
+                   score = model.increaseScore(inputInt: score)
                }
                scoreValue.text = String(score)
         
@@ -160,7 +162,8 @@ class ViewController: UIViewController {
       }
     
     @objc func handleTap3() {
-        
+        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
+
      
          //check color
          checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
@@ -170,11 +173,11 @@ class ViewController: UIViewController {
          
         
            
-           if(checkColor3){
-                      score = model.increaseScore(inputInt: score)
+           if(!checkColor3){
+                      score = model.decreaseScore(inputInt: score)
                   }
                   else{
-                      score = model.decreaseScore(inputInt: score)
+                      score = model.increaseScore(inputInt: score)
                   }
                   scoreValue.text = String(score)
         
@@ -190,18 +193,19 @@ class ViewController: UIViewController {
     }
        
        @objc func handleTap4() {
-    
+    colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
+
         //check color
         checkColor1 = model.check(inputString: colorName.text!, inputColor: Color1.backgroundColor!)
         checkColor2 = model.check(inputString: colorName.text!, inputColor: Color2.backgroundColor!)
         checkColor3 = model.check(inputString: colorName.text!, inputColor: Color3.backgroundColor!)
         checkColor4 = model.check(inputString: colorName.text!, inputColor: Color4.backgroundColor!)
         
-             if(checkColor4){
-                        score = model.increaseScore(inputInt: score)
+             if(!checkColor4){
+                        score = model.decreaseScore(inputInt: score)
                     }
                     else{
-                        score = model.decreaseScore(inputInt: score)
+                        score = model.increaseScore(inputInt: score)
                     }
                     scoreValue.text = String(score)
         //diaplay color name
