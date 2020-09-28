@@ -48,7 +48,8 @@ class ViewController: UIViewController {
        
         
         
-        
+
+                
         //color changes
         colorChange()
         
@@ -71,6 +72,11 @@ class ViewController: UIViewController {
         //Localization
                scoreLabel.text = NSLocalizedString("Score", comment: "score")
         
+        
+          Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(colorChange), userInfo: nil, repeats: true)
+                
+        
+         
     }
     
     @IBAction func onScreenTap(_ sender: Any) {
@@ -89,16 +95,9 @@ class ViewController: UIViewController {
         }
         
         scoreValue.text = String(score)
-        
-        //diaplay color name
-              
-              colorName.text = model.randomColorString()
-        
-        //Localization
-        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
-        
-        colorChange()
-         
+      
+     
+      
     }
     
     @objc func handleTap1() {
@@ -120,15 +119,8 @@ class ViewController: UIViewController {
             score = model.increaseScore(inputInt: score)
         }
         scoreValue.text = String(score)
-        
-        //diaplay color name
-              
-              colorName.text = model.randomColorString()
-        
-        //Localization
-        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
-        
-       colorChange()
+       
+
     }
     
     @objc func handleTap2() {
@@ -158,7 +150,8 @@ class ViewController: UIViewController {
         //Localization
         colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
         
-        colorChange()
+
+        
       }
     
     @objc func handleTap3() {
@@ -180,15 +173,7 @@ class ViewController: UIViewController {
                       score = model.increaseScore(inputInt: score)
                   }
                   scoreValue.text = String(score)
-        
-        //diaplay color name
-              
-              colorName.text = model.randomColorString()
-        
-        //Localization
-        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
-        
-        colorChange()
+  
         
     }
        
@@ -208,19 +193,12 @@ class ViewController: UIViewController {
                         score = model.increaseScore(inputInt: score)
                     }
                     scoreValue.text = String(score)
-        //diaplay color name
-              
-              colorName.text = model.randomColorString()
-        
-        //Localization
-        colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
-
-            colorChange()
+  
         
          }
     
     
-    func colorChange() {
+   @objc func colorChange() {
         
         //color changes
         Color1.backgroundColor = model.randomColorGenerator()
@@ -246,10 +224,15 @@ class ViewController: UIViewController {
                          Color1.backgroundColor = model.randomColorGenerator()
                      }
         
-        view.backgroundColor = model.backgroundColor()
-        if view.backgroundColor == UIColor.black || view.backgroundColor == UIColor.blue {
-        view.backgroundColor = UIColor.yellow
-        }
+       
+        
+        //diaplay color name
+                  
+            colorName.text = model.randomColorString()
+            
+            //Localization
+            colorName.text = NSLocalizedString(colorName.text!, comment: "colorName")
+            
     }
 
 
